@@ -16,7 +16,7 @@ namespace SportStats.WebApi.EntityFramework
             TeamInGames = new HashSet<TeamInGame>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required]

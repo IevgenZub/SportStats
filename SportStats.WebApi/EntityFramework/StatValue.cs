@@ -9,7 +9,7 @@ namespace SportStats.WebApi.EntityFramework
     [Table("StatValue")]
     public partial class StatValue
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         public int StatTypeId { get; set; }

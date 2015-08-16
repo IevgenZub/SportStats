@@ -15,7 +15,7 @@ namespace SportStats.WebApi.EntityFramework
             Cities = new HashSet<City>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required]
