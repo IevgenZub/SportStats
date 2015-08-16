@@ -1,7 +1,10 @@
-﻿using System;
+﻿using SportStats.WebApi.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.OData.Builder;
+using System.Web.OData.Extensions;
 
 namespace SportStats.WebApi
 {
@@ -9,16 +12,23 @@ namespace SportStats.WebApi
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
+            ODataModelBuilder builder = new ODataConventionModelBuilder();
 
-            // Web API routes
-            config.MapHttpAttributeRoutes();
+            builder.EntitySet<Sport>("Sports");
+            builder.EntitySet<Team>("Teams");
+            builder.EntitySet<Player>("Players");
+            builder.EntitySet<TeamInGame>("TeamInGames");
+            builder.EntitySet<Tournament>("Tournaments");
+            builder.EntitySet<Game>("Games");
+            builder.EntitySet<StatType>("StatTypes");
+            builder.EntitySet<StatValue>("StatValues");
+            builder.EntitySet<City>("Cities");
+            builder.EntitySet<Country>("Countries");
 
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+            config.MapODataServiceRoute(
+                routeName: "ODataRoute",
+                routePrefix: null,
+                model: builder.GetEdmModel());
         }
     }
 }
