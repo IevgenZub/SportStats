@@ -9,7 +9,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
-using System.Web.Http.OData;
+using System.Web.OData;
 using System.Web.Http.OData.Routing;
 using SportStats.WebApi.EntityFramework;
 
@@ -34,6 +34,7 @@ namespace SportStats.WebApi.Controllers
         [EnableQuery]
         public IQueryable<Country> GetCountries()
         {
+            var countries = db.Countries.ToArray();
             return db.Countries;
         }
 
