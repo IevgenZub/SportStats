@@ -3,8 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
-using System.Web.OData.Builder;
-using System.Web.OData.Extensions;
+using System.Web.Http.OData.Builder;
+using System.Web.Http.OData.Extensions;
 
 namespace SportStats.WebApi
 {
@@ -25,10 +25,7 @@ namespace SportStats.WebApi
             builder.EntitySet<City>("Cities");
             builder.EntitySet<Country>("Countries");
 
-            config.MapODataServiceRoute(
-                routeName: "ODataRoute",
-                routePrefix: null,
-                model: builder.GetEdmModel());
+            config.Routes.MapODataRoute("odata", "odata", builder.GetEdmModel());
         }
     }
 }
