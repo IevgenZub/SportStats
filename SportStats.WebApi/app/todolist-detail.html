@@ -12,7 +12,7 @@
         <!-- Display mode -->
         <div data-ng-switch-when="false">
             <h1 data-ng-click="vm.editBegin(vm.todoList)">
-                {{vm.todoList.title}}
+                {{vm.todoList.Name}}
                 <a data-ng-click="vm.deleteTodoList()">
                     <i class="glyphicon glyphicon-remove" title="Delete this TodoList"></i>
                 </a>
@@ -22,10 +22,10 @@
         <!-- Edit mode -->
         <div data-ng-switch-default>
             <form data-ng-submit="vm.editEnd()" >
-                <input type="text" autofocus placeholder="Title"
+                <input type="text" autofocus placeholder="Name"
                        class="todolist-title"
                        data-z-validate
-                       data-ng-model="vm.todoList.title"
+                       data-ng-model="vm.todoList.Name"
                        data-ng-blur="vm.editEnd()" />
             </form>
         </div>

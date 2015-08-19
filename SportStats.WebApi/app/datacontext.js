@@ -74,9 +74,9 @@
             }
 
             //Todo: when no forceRefresh, consider getting from cache rather than remotely
-            return breeze.EntityQuery.from('TodoLists')
-                .orderBy('created desc, title')
-                .expand("todoItems")
+            return breeze.EntityQuery.from('Countries')
+                //.orderBy('created desc, title')
+                //.expand("todoItems")
                 .using(manager).execute()
                 .then(success).catch(failed);
 
