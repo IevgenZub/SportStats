@@ -116,10 +116,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
-    <Content Include="app\countries.html" />
-    <Content Include="app\countries.js" />
-    <Content Include="app\datacontext.js" />
-    <Content Include="app\entityManagerFactory.js" />
+    <Content Include="app\views\countries.html" />
+    <Content Include="app\controllers\countries.js" />
+    <Content Include="app\odata\datacontext.js" />
+    <Content Include="app\odata\entityManagerFactory.js" />
     <Content Include="app\logger.js" />
     <Content Include="content\breeze.directives.css" />
     <Content Include="content\toastr.css" />
