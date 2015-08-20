@@ -28,6 +28,7 @@
             createTodoItem: createTodoItem,
             deleteTodoItem: deleteTodoItem,
             deleteTodoList: deleteTodoList,
+            getCountries: getCountries,
             save: save
         };
 
@@ -35,11 +36,31 @@
 
         /*** implementation ***/
 
+        function getCountries() {
+            
+            //Todo: when no forceRefresh, consider getting from cache rather than remotely
+            return breeze.EntityQuery.from('Countries')
+                //.orderBy('created desc, title')
+                //.expand("todoItems")
+                .using(manager).execute()
+                .then(success).catch(failed);
+
+            function success(response) {
+                count = response.results.length;
+                logSuccess('Got ' + count + ' countries(s)', response, true);
+                return response.results;
+            }
+            function failed(error) {
+                var message = error.message || "countries query failed";
+                logError(message, error, true);
+            }
+        }
+
         function createTodoList(initialValues) {
             var created = new Date().toUTCString();
-            initialValues = initialValues || {title: '[New TodoList]'};
+            initialValues = initialValues || {title: '[New Country]'};
             initialValues.created = initialValues.created || created;
-            return manager.createEntity('TodoList', initialValues);
+            return manager.createEntity('Country', initialValues);
         }
 
         function createTodoItem(initialValues) {

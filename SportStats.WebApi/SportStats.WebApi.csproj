@@ -117,6 +117,8 @@
   <ItemGroup>
     <Content Include="app\app.js" />
     <Content Include="app\commandbar.html" />
+    <Content Include="app\countries.html" />
+    <Content Include="app\countries.js" />
     <Content Include="app\datacontext - saveSortedChangesAsOne.js" />
     <Content Include="app\datacontext.js" />
     <Content Include="app\entityManagerFactory.js" />
