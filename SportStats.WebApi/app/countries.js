@@ -26,7 +26,7 @@
         }
 
         function getCountriesList() {
-            return datacontext.getTodoLists().then(function (data) {
+            return datacontext.getCountries().then(function (data) {
                 return vm.countriesList = data;
             });
         }

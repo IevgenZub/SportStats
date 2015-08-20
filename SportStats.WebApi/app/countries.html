@@ -2,14 +2,10 @@
     Master view of all Countries
     --------------------------------------------------->
 <div class="well" data-ng-controller="countries as vm">
-
-    <!-- Command Bar Buttons -->
-    <div data-ng-include="'/app/commandbar.html'"></div>
-
-    
     <!-- Countries Content -->
-    <div class="app-todo-text" data-ng-repeat="country in vm.countriesList">
-        {{country.name}}
-    </div>
-
+    <ul data-ng-repeat="country in vm.countriesList">
+        <li>
+            {{country.name}}
+        </li>
+    </ul>
 </div>

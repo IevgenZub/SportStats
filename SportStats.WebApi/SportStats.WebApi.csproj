@@ -116,18 +116,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
-    <Content Include="app\commandbar.html" />
     <Content Include="app\countries.html" />
     <Content Include="app\countries.js" />
-    <Content Include="app\datacontext - saveSortedChangesAsOne.js" />
     <Content Include="app\datacontext.js" />
     <Content Include="app\entityManagerFactory.js" />
     <Content Include="app\logger.js" />
-    <Content Include="app\new-todolist.html" />
-    <Content Include="app\todolist-detail.html" />
-    <Content Include="app\todolist-detail.js" />
-    <Content Include="app\todolists.html" />
-    <Content Include="app\todolists.js" />
     <Content Include="content\breeze.directives.css" />
     <Content Include="content\toastr.css" />
     <Content Include="content\toastr.min.css" />
