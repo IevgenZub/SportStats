@@ -13,6 +13,7 @@
 
         // Breeze Modules
         'breeze.angular',   // Breeze service
-        'breeze.directives' // Breeze validation directive (zValidate)
+        'breeze.directives', // Breeze validation directive (zValidate)
+        'SignalR'
     ]); 
 })();
